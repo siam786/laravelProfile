@@ -16,8 +16,8 @@ class ProfileController extends Controller
             "name"=>$name,
             "age"=>$age
         ]);
-        $name='access_token';
-        $value='123-XYZ';
+        $cookieName ='access_token';
+        $cookieValue='123-XYZ';
         $minutes=1;
         $path='/';
         $domain=$_SERVER['SERVER_NAME'];
@@ -26,6 +26,6 @@ class ProfileController extends Controller
         return response()->json([
             'status'=>'Success',
             'data'=>$data,
-        ],200)->cookie($name,$value,$minutes,$path,$domain,$secure,$httpOnly);
+        ],200)->cookie($cookieName ,$cookieValue,$minutes,$path,$domain,$secure,$httpOnly);
     }
 }
